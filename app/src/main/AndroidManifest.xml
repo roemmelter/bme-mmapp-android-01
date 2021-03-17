@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApplication">
-        <activity android:name="org.mmapp.StateSwitchingActivity"></activity>
-        <activity android:name="org.mmapp.ButtonActivity" />
-        <activity android:name="org.mmapp.SimpleActivity" />
-        <activity android:name="org.mmapp.MainActivity">
+        <activity
+            android:name=".RotationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity android:name=".StateSwitchingActivity" />
+        <activity android:name=".ButtonActivity" />
+        <activity android:name=".SimpleActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

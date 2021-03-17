@@ -1,5 +1,6 @@
 package org.mmapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ButtonActivity extends AppCompatActivity {
+public class ButtonActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
