@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ll.addView(createButtonForActivity(this, "SMSActivity", SMSActivity.class));
         ll.addView(createButtonForActivity(this, "EmailActivity", EmailActivity.class));
         ll.addView(createButtonForActivity(this, "CalendarActivity", CalendarActivity.class));
+        ll.addView(createButtonForActivity(this, "BarcodeActivity", BarcodeActivity.class));
 
         setContentView(ll);
     }
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),
-                        "ButtonTel was clicked",
+                        "Button '" + btnLabel + "' was clicked",
                         Toast.LENGTH_SHORT)
                         .show();
                 startActivity(new Intent(ctx, activityClass));
