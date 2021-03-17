@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         ll.addView(createButtonForActivity(this, "GeoActivity", GeoActivity.class));
         ll.addView(createButtonForActivity(this, "SMSActivity", SMSActivity.class));
         ll.addView(createButtonForActivity(this, "EmailActivity", EmailActivity.class));
+        ll.addView(createButtonForActivity(this, "CalendarActivity", CalendarActivity.class));
 
         setContentView(ll);
     }
