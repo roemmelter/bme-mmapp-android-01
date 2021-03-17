@@ -1,6 +1,5 @@
 package org.mmapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -13,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,28 +25,31 @@ public class MainActivity extends Activity {
         ll.setBackgroundColor(0x200000FF);
         ll.setOrientation(LinearLayout.VERTICAL);
 
-        ll.addView(createButtonGotoActivity(this, "Go to SimpleActivity", SimpleActivity.class));
-        ll.addView(createButtonGotoActivity(this, "Go to ButtonActivity", ButtonActivity.class));
-        ll.addView(createButtonGotoActivity(this, "Go to StateSwitchingActivity", StateSwitchingActivity.class));
-        ll.addView(createButtonGotoActivity(this, "Go to RotationActivity", RotationActivity.class));
+        ll.addView(createButtonForActivity(this, "SimpleActivity", SimpleActivity.class));
+        ll.addView(createButtonForActivity(this, "ButtonActivity", ButtonActivity.class));
+        ll.addView(createButtonForActivity(this, "StateSwitchingActivity", StateSwitchingActivity.class));
+        ll.addView(createButtonForActivity(this, "RotationActivity", RotationActivity.class));
+        ll.addView(createButtonForActivity(this, "GeoActivity", GeoActivity.class));
+        ll.addView(createButtonForActivity(this, "SMSActivity", SMSActivity.class));
+        ll.addView(createButtonForActivity(this, "EmailActivity", EmailActivity.class));
 
         setContentView(ll);
     }
 
-    protected Button createButtonGotoActivity(Context ctx, String btnLabel, Class gotoActivityClass) {
+    protected Button createButtonForActivity(Context ctx, String btnLabel, Class activityClass) {
         Button btn = new Button(ctx);
         btn.setTypeface(Typeface.create(
                 "sans-serif", Typeface.NORMAL));
+        btn.setTransformationMethod(null);
         btn.setText(btnLabel);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(),
-                        "ButtonWeb was clicked",
+                        "ButtonTel was clicked",
                         Toast.LENGTH_SHORT)
                         .show();
-                Intent intent = new Intent(ctx, gotoActivityClass);
-                startActivity(intent);
+                startActivity(new Intent(ctx, activityClass));
             }
         });
         return btn;

@@ -1,12 +1,11 @@
 package org.mmapp;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class StateSwitchingActivity extends Activity {
+public class StateSwitchingActivity extends AppCompatActivity {
     private final String TAG = "StateSwitching";
 
     @Override

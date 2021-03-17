@@ -13,6 +13,13 @@
             android:name=".RotationActivity"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
+        <activity android:name=".NumpadActivity" />
+        <activity android:name=".RecordVideoActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".BarcodeActivity" />
+        <activity android:name=".EmailActivity" />
+        <activity android:name=".SMSActivity" />
+        <activity android:name=".GeoActivity" />
         <activity android:name=".StateSwitchingActivity" />
         <activity android:name=".ButtonActivity" />
         <activity android:name=".SimpleActivity" />

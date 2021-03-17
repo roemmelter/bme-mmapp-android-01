@@ -1,6 +1,5 @@
 package org.mmapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ButtonActivity extends Activity {
+public class ButtonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +74,63 @@ public class ButtonActivity extends Activity {
             }
         });
         ll.addView(btnTel);
+
+        Button btnYoutube = new Button(this);
+        btnYoutube.setTypeface(Typeface.create(
+                "sans-serif", Typeface.NORMAL));
+        btnYoutube.setText("Youtube: Android vs. iPhone War (2016)");
+        btnYoutube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),
+                        "ButtonYoutube was clicked",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                Uri uri = Uri.parse("http://youtu.be/Cv7CJg8pSIM");
+                Intent gotoUri = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(gotoUri);
+            }
+        });
+        ll.addView(btnYoutube);
+
+        Button btnGoogleMaps = new Button(this);
+        btnGoogleMaps.setTypeface(Typeface.create(
+                "sans-serif", Typeface.NORMAL));
+        btnGoogleMaps.setText("GoogleMaps: Campus Bib - TH Nürnberg");
+        btnGoogleMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),
+                        "ButtonGoogleMaps was clicked",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                Uri uri = Uri.parse("https://goo.gl/maps/"+
+                        "y5HUpYeG1uuPcVM67");
+                Intent gotoUri = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(gotoUri);
+            }
+        });
+        ll.addView(btnGoogleMaps);
+
+        Button btnOpenMap = new Button(this);
+        btnOpenMap.setTypeface(Typeface.create(
+                "sans-serif", Typeface.NORMAL));
+        btnOpenMap.setText("OpenStreetMap: Campus Bib - TH Nürnberg");
+        btnOpenMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(),
+                        "ButtonOpenMap was clicked",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                Uri uri = Uri.parse("http://osm.org/?lat=49.45234&lon=11.09346&zoom=20");
+                Intent gotoUri = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(gotoUri);
+            }
+        });
+        ll.addView(btnOpenMap);
+
+
 
         setContentView(ll);
     }
