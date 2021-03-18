@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         ll.addView(createButtonForActivity(this, "EmailActivity", EmailActivity.class));
         ll.addView(createButtonForActivity(this, "CalendarActivity", CalendarActivity.class));
         ll.addView(createButtonForActivity(this, "BarcodeActivity", BarcodeActivity.class));
+        ll.addView(createButtonForActivity(this, "RecordVideoActivity", RecordVideoActivity.class));
 
         setContentView(ll);
     }

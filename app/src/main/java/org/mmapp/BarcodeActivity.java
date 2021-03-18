@@ -40,7 +40,7 @@ public class BarcodeActivity extends AppCompatActivity {
                 if (gotoBarcodeScanner.resolveActivityInfo(getPackageManager(), 0) != null) {
                     startActivityForResult(gotoBarcodeScanner, 0);
                 } else {
-                    Toast.makeText(v.getContext(), "Not installed.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "Package/App not installed.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -48,7 +48,6 @@ public class BarcodeActivity extends AppCompatActivity {
 
         tv = new TextView(this);
         tv.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
-//        tv.setTransformationMethod(null);
         tv.setText("");
         ll.addView(tv);
 
