@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 /**
  * MIT License (http://choosealicense.com/licenses/mit/)
  *
- * NumpadActivity
+ * MainActivity
  *
  * @author Erik Roemmelt
  */
