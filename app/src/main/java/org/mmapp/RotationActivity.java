@@ -7,6 +7,13 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * RotationActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class RotationActivity extends AppCompatActivity {
     private final String TAG = "RotationActivity";
 

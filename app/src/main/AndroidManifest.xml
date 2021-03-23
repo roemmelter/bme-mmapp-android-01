@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApplication">
+        <activity android:name=".NumpadDemoActivity"></activity>
         <activity
             android:name=".RotationActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
+            android:configChanges="keyboardHidden|orientation|screenSize"></activity>
         <activity android:name=".NumpadActivity" />
         <activity android:name=".RecordVideoActivity" />
         <activity android:name=".CalendarActivity" />

@@ -5,6 +5,13 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * SimpleActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class SimpleActivity extends Activity {
 
     @Override

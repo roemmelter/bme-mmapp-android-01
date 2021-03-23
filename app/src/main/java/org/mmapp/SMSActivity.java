@@ -6,6 +6,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * SMSActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class SMSActivity extends AppCompatActivity {
 
     @Override

@@ -6,6 +6,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * GeoActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class GeoActivity extends AppCompatActivity {
 
     @Override

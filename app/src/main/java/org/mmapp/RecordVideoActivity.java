@@ -16,6 +16,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * RecordVideoActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class RecordVideoActivity extends AppCompatActivity {
     private TextView tv;
 

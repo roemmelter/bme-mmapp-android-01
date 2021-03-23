@@ -5,6 +5,13 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * StateSwitchingActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class StateSwitchingActivity extends AppCompatActivity {
     private final String TAG = "StateSwitching";
 

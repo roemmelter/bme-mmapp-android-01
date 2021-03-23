@@ -1,5 +1,6 @@
 package org.mmapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -13,6 +14,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * NumpadActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -36,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         ll.addView(createButtonForActivity(this, "CalendarActivity", CalendarActivity.class));
         ll.addView(createButtonForActivity(this, "BarcodeActivity", BarcodeActivity.class));
         ll.addView(createButtonForActivity(this, "RecordVideoActivity", RecordVideoActivity.class));
+        ll.addView(createButtonForActivity(this, "NumpadDemoActivity", NumpadDemoActivity.class));
 
         setContentView(ll);
     }

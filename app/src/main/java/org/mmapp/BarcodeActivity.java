@@ -13,6 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * BarcodeActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class BarcodeActivity extends AppCompatActivity {
     private TextView tv;
 

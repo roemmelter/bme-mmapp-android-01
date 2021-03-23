@@ -8,6 +8,13 @@ import android.provider.CalendarContract;
 
 import java.util.Calendar;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * CalendarActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class CalendarActivity extends AppCompatActivity {
 
     @Override

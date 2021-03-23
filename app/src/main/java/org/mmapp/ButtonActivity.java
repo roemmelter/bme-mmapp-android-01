@@ -11,6 +11,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * MIT License (http://choosealicense.com/licenses/mit/)
+ *
+ * ButtonActivity
+ *
+ * @author Erik Roemmelt
+ */
 public class ButtonActivity extends AppCompatActivity {
 
     @Override
