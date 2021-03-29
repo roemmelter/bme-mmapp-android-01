@@ -1,30 +1,23 @@
 package org.mmapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 /**
  * MIT License (http://choosealicense.com/licenses/mit/)
+ * <p><br>
+ * <b>NumpadActivity</b><br>
  *
- * NumpadActivity
- *
+ * </p><br>
  * @author Erik Roemmelt
  */
 public class NumpadActivity extends Activity {
@@ -33,38 +26,50 @@ public class NumpadActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final int[] NUMBERS = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        final int[] NUMBERS = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         final int COLUMNS = 3;
-        final int ROWS = NUMBERS.length / COLUMNS;
 
-        GridLayout gl = new GridLayout(this);
-        GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-        params.height = GridLayout.LayoutParams.WRAP_CONTENT;
-        params.width = GridLayout.LayoutParams.WRAP_CONTENT;
-        gl.setLayoutParams(params);
-        gl.removeAllViews();
-        gl.setColumnCount(COLUMNS);
-        gl.setRowCount( ROWS );
-        gl.setBackgroundColor(0x20FFFFFF);
+        TableLayout tbl = new TableLayout(this);
+        tbl.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        tbl.setGravity(Gravity.CENTER_VERTICAL);
+        tbl.setBackgroundColor(0x20FFFFFF);
+
+        TableRow tr = null;
+        TableLayout.LayoutParams tblParams = new TableLayout.LayoutParams(
+                TableLayout.LayoutParams.WRAP_CONTENT,
+                TableLayout.LayoutParams.WRAP_CONTENT);
+        TableRow.LayoutParams trParams = new TableRow.LayoutParams(
+                TableRow.LayoutParams.WRAP_CONTENT,
+                TableRow.LayoutParams.WRAP_CONTENT);
+
 
         for (int number : NUMBERS) {
-            createButton(Integer.toString(number), gl);
+            if ((number-1) % COLUMNS == 0) {
+                tr = new TableRow(this);
+                tr.setLayoutParams(tblParams);
+                tr.setGravity(Gravity.CENTER_HORIZONTAL);
+                tbl.addView(tr);
+            }
+
+            createButton(Integer.toString(number), tr, trParams);
         }
 
-        setContentView(gl);
+        setContentView(tbl);
     }
 
-    private void createButton(String btnLabel, ViewGroup layout) {
+    private void createButton(String btnLabel, ViewGroup layout, ViewGroup.LayoutParams params) {
         Button btn = new Button(layout.getContext());
-        btn.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
+        btn.setLayoutParams(params);
         btn.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
         btn.setText(btnLabel);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id = ((Button) v).getId();
+                int id = ((Button) v).getId() != -1
+                         ? ((Button) v).getId()
+                         : Integer.parseInt(btnLabel);
                 int num = Integer.parseInt(btnLabel);
                 Intent intent = new Intent();
                 Log.i("NumpadActivity", "btnId: " + id + ", btnNum: " + num);

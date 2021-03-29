@@ -1,19 +1,19 @@
 package org.mmapp;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 /**
  * MIT License (http://choosealicense.com/licenses/mit/)
- *
- * StateSwitchingActivity
- *
+ * <p><br>
+ * <b>StateSwitchingActivity</b><br>
+ * This activity indicates all its life cycle states in the logcat as soon as they are triggered.
+ * </p><br>
  * @author Erik Roemmelt
  */
-public class StateSwitchingActivity extends AppCompatActivity {
-    private final String TAG = "StateSwitching";
+public class StateSwitchingActivity extends Activity {
+    private final String TAG = "MMAPP.StateSwitching";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

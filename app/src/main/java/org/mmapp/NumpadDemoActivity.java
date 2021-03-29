@@ -2,19 +2,20 @@ package org.mmapp;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 /**
  * MIT License (http://choosealicense.com/licenses/mit/)
+ * <p><br>
+ * <b>NumpadDemoActivity</b><br>
  *
- * NumpadDemoActivity
- *
+ * </p><br>
  * @author Erik Roemmelt
  */
 public class NumpadDemoActivity extends Activity {
@@ -29,8 +30,8 @@ public class NumpadDemoActivity extends Activity {
         Intent intent = new Intent(getApplicationContext(), NumpadActivity.class);
         intent.putExtra("id", btnId);
 
-        createLinearLayoutWithTextview("Button ID: " + btnId);
-        setContentView( ll );
+        createLinearLayoutWithTextView("Button ID: " + btnId);
+        setContentView(ll);
 
         startActivityForResult(intent, 1);
     }
@@ -43,29 +44,32 @@ public class NumpadDemoActivity extends Activity {
             if (resultCode == RESULT_OK) {
                 int id = data.getIntExtra("id", -1);
                 int num = data.getIntExtra("num", -1);
-                Log.i("NumpadDemoActivity", "ButtonId: " + id + ", ButtonNum: " + num);
-                tv.setText("Button ID: " + id + "; Button Number: " + num);
+                Log.i("NumpadDemoActivity", "ButtonId: " + id + ", ButtonNumber: " + num);
+                tv.setText(String.format("ButtonId: %d; ButtonNumber: %d", id, num));
 
             } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(getApplicationContext(), "Action canceled.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Action canceled.",
+                               Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    private void createLinearLayoutWithTextview(String textviewContent) {
-        ll = new LinearLayout(this);
-        ll.setLayoutParams(new LinearLayout.LayoutParams(
+    private void createLinearLayoutWithTextView(String textViewContent) {
+        final LinearLayout.LayoutParams paramsMatchParent = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT));
-        ll.setBackgroundColor(Color.parseColor("#20FFFFFF"));
+                LinearLayout.LayoutParams.MATCH_PARENT);
+
+        ll = new LinearLayout(this);
+        ll.setLayoutParams(paramsMatchParent);
+        ll.setGravity(Gravity.CENTER);
         ll.setOrientation(LinearLayout.VERTICAL);
+        ll.setBackgroundColor(0x20FFFFFF);
 
         tv = new TextView(this);
-        tv.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT));
+        tv.setLayoutParams(paramsMatchParent);
+        tv.setGravity(Gravity.CENTER);
         tv.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
-        tv.setText(textviewContent);
+        tv.setText(textViewContent);
 
         ll.addView(tv);
     }
@@ -73,6 +77,6 @@ public class NumpadDemoActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        setContentView(ll);
+        //setContentView(ll);
     }
 }
