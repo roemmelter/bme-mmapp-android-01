@@ -1,13 +1,11 @@
 package org.mmapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -28,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         LinearLayout ll = new LinearLayout(this);
-        ll.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT));
-        ll.setBackgroundColor(0x200000FF);
+        ll.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        ll.setBackgroundColor(0x20FFFFFF);
         ll.setOrientation(LinearLayout.VERTICAL);
 
         ll.addView(createButtonForActivity(this, "SimpleActivity", SimpleActivity.class));
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn = new Button(ctx);
         btn.setTypeface(Typeface.create(
                 "sans-serif", Typeface.NORMAL));
-        btn.setTransformationMethod(null);
+        //btn.setTransformationMethod(null);
         btn.setText(btnLabel);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
