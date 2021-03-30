@@ -14,7 +14,8 @@ import android.widget.Toast;
  * MIT License (http://choosealicense.com/licenses/mit/)
  * <p><br>
  * <b>NumpadDemoActivity</b><br>
- *
+ * This activity starts the NumpadActivity. After a button has been pressed in the started activity,
+ * the transmitted values are displayed as text in the middle of this activity.
  * </p><br>
  * @author Erik Roemmelt
  */
@@ -72,11 +73,5 @@ public class NumpadDemoActivity extends Activity {
         tv.setText(textViewContent);
 
         ll.addView(tv);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        //setContentView(ll);
     }
 }

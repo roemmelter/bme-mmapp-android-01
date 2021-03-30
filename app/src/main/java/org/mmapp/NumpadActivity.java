@@ -16,7 +16,9 @@ import android.widget.TableRow;
  * MIT License (http://choosealicense.com/licenses/mit/)
  * <p><br>
  * <b>NumpadActivity</b><br>
- *
+ * This activity is started by the NumpadDemoActivity. Several buttons with numbers are created
+ * in the onCreate method. By activating one of these buttons, the ID and the display text
+ * are transmitted to the NumpadDemoActivity via intent.
  * </p><br>
  * @author Erik Roemmelt
  */
